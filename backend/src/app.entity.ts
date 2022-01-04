@@ -11,6 +11,9 @@ class FibonacciValues {
 
   @Column({ name: 'value', nullable: true })
   value: string;
+
+  @Column({ name: 'dateTime', nullable: true })
+  dateTime: string;
 }
 
 export { FibonacciValues };

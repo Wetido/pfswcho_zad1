@@ -21,6 +21,10 @@
           <button class="nav-element btn btn-primary">Dokumentacja
           </button>
         </router-link>
+        <router-link to="/history">
+          <button class="nav-element btn btn-primary">Historia
+          </button>
+        </router-link>
       </div>
 
       <router-view/>

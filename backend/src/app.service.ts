@@ -3,6 +3,7 @@ import { Cache } from 'cache-manager';
 import { InjectRepository } from '@nestjs/typeorm';
 import { FibonacciValues } from './app.entity';
 import { Repository } from 'typeorm';
+import * as moment from 'moment';
 
 @Injectable()
 export class AppService {
@@ -38,9 +39,11 @@ export class AppService {
 
     if (value === null) {
       value = await this.getFibonacciValueByIndex(index);
-      console.log('dbValue = ', value);
+
       if (value === undefined) {
-        value = this.countFibonacci(index);
+        value = await this.countFibonacci(index);
+      } else {
+        value = value.value;
       }
     }
 
@@ -54,10 +57,19 @@ export class AppService {
   async saveFibonacciValue(index: number, value: number) {
     const fibonacciValues = new FibonacciValues();
 
+    const DATE_TIME_FORMAT = 'YYYY-MM-DD HH:mm:ss';
+
     fibonacciValues.index = `${index}`;
     fibonacciValues.value = `${value}`;
+    fibonacciValues.dateTime = moment().format(DATE_TIME_FORMAT);
 
     await this.fibonacciValuesRepository.save(fibonacciValues);
+  }
+
+  async getAllFibonacciValues() {
+    return await this.fibonacciValuesRepository
+      .createQueryBuilder('fibonacci')
+      .getMany();
   }
 
   async getFibonacciValueByIndex(index: number) {

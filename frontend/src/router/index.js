@@ -3,7 +3,7 @@ import VueRouter from "vue-router";
 import Home from '../components/Home'
 import Fibonacci from "../components/Fibonacci";
 import Docs from "../components/Docs";
-
+import History from "../components/History"
 Vue.use(VueRouter);
 
 const routes = [
@@ -24,6 +24,12 @@ const routes = [
         path: "/docs",
         name: "Docs",
         component: Docs
+    },
+
+    {
+        path: "/history",
+        name: "History",
+        component: History
     },
 ];
 

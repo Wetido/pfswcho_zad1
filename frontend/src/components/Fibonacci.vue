@@ -1,14 +1,35 @@
 <template>
   <div class="hello">
-    Fibonacci
+    <label>Podaj wartosc ciągu do obliczenia</label>
+    <input v-model="value">
+    <button @click="calculate">Oblicz</button>
+
+    <div v-show="result !== null">
+      Wynik = {{result}}
+    </div>
   </div>
 </template>
 
 <script>
+import axios from "axios";
+
 export default {
   name: 'Fibonacci',
-  props: {
-    msg: String
+  data() {
+    return {
+      value: null,
+      result: null
+    }
+  },
+
+  methods: {
+    calculate(){
+      console.log(this.value)
+      axios.post('http://localhost:3000/fibonacci/calculate/', {index: this.value}).then((response) => {
+        console.log(response);
+        this.result = response.data
+      });
+    }
   }
 }
 </script>
