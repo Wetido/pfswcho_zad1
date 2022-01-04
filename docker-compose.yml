@@ -1,0 +1,70 @@
+#postgres server is visible as pgsql-server in pgadmin panel
+
+version: '3'
+services:
+
+  redis:
+    image: 'redis:6.2-alpine'
+    container_name: redis
+
+  backend:
+    container_name: backend
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    volumes:
+      - ./backend:/app
+    ports:
+      - '3000:3000'
+    environment:
+    - NODE_ENV=production
+    - LOG_PATH=/var/log/
+    - REDIS_HOST=redis
+    - REDIS_PORT=6379
+    - PGUSER=fib
+    - PGHOST=postgres
+    - PGDATABASE=fib
+    - PGPASSWORD=fib
+    - PGPORT=5432
+
+  frontend:
+    container_name: frontend
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    ports:
+      - '8080:8080'
+
+  postgres:
+    container_name: postgres
+    image: postgres
+    environment:
+      POSTGRES_USER: "fib"
+      POSTGRES_PASSWORD: "fib"
+      POSTGRES_DB: "fib"
+    volumes:
+      - postgres:/data/postgres
+    ports:
+      - "5432:5432"
+    restart: unless-stopped
+
+  pgadmin:
+    container_name: pgadmin
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: 123@test.pl
+      PGADMIN_DEFAULT_PASSWORD: '123'
+    volumes:
+      - pgadmin:/root/.pgadmin
+    ports:
+      - "8090:80"
+    restart: unless-stopped
+    links:
+      - "postgres:pgsql-server"
+
+volumes:
+    postgres:
+    pgadmin:
