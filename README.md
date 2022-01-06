@@ -56,3 +56,5 @@ countFibonacciRecursive - podany index został obliczony rekurencyjnie
 ## Zdjęcie potwierdzające działania usług
 
 ![image](https://user-images.githubusercontent.com/33351633/148441322-17ed9079-db5d-4802-9d04-a3297afc35d8.png)
+![image](https://user-images.githubusercontent.com/33351633/148441463-b06a68f5-435d-47b9-9cd2-5ac0b48c0972.png)
+
