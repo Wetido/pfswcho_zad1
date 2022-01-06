@@ -1,24 +1,28 @@
 <template>
   <div class="hello">
-    Historia
+    Historia ostatnich 10 obliczeń
     <table style="margin: 0 auto">
       <thead>
       <tr>
-        <th>ID</th>
+        <th>Index</th>
         <th>Wartość</th>
-        <th>Data obliczenia</th>
+        <th>Date obliczenia</th>
+        <th>Źródło</th>
       </tr>
       </thead>
       <tbody>
       <tr v-for="historyElement in history" v-bind:key="historyElement.id">
         <td>
-          {{ historyElement.id }}
+          {{ historyElement.index }}
         </td>
         <td>
           {{ historyElement.value }}
         </td>
         <td>
           {{ historyElement.dateTime }}
+        </td>
+        <td>
+          {{ historyElement.source }}
         </td>
       </tr>
       </tbody>

@@ -18,11 +18,11 @@
           </button>
         </router-link>
         <router-link to="/docs">
-          <button class="nav-element btn btn-primary">Dokumentacja
+          <button class="nav-element btn btn-primary">Docs
           </button>
         </router-link>
         <router-link to="/history">
-          <button class="nav-element btn btn-primary">Historia
+          <button class="nav-element btn btn-primary">History
           </button>
         </router-link>
       </div>

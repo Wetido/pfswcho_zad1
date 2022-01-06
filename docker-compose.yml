@@ -34,7 +34,6 @@ services:
       dockerfile: Dockerfile
     volumes:
       - ./frontend:/app
-      - /app/node_modules
     ports:
       - '8080:8080'
 
@@ -66,5 +65,7 @@ services:
       - "postgres:pgsql-server"
 
 volumes:
+    backend:
     postgres:
     pgadmin:
+    frontend:

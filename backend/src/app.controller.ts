@@ -8,7 +8,12 @@ export class AppController {
 
   @Post('/calculate')
   async calculate(@Body() authRegister: any): Promise<number> {
-    return await this.appService.getRedisValueByIndex(authRegister.index);
+    return await this.appService.calculateFibbNormal(authRegister.index);
+  }
+
+  @Post('/calculateRecursive')
+  async calculateRecursive(@Body() authRegister: any): Promise<number> {
+    return await this.appService.calculateFibRecursive(authRegister.index);
   }
 
   @Get('/getAll')

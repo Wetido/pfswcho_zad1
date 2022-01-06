@@ -1,8 +1,9 @@
 <template>
   <div class="hello">
     <label>Podaj wartosc ciągu do obliczenia</label>
-    <input v-model="value">
-    <button @click="calculate">Oblicz</button>
+    <input v-model="value"><br>
+    <button @click="calculate">Oblicz</button><br>
+    <button @click="calculateRecursive">Oblicz Rekurencyjnie</button><br>
 
     <div v-show="result !== null">
       Wynik = {{result}}
@@ -24,8 +25,14 @@ export default {
 
   methods: {
     calculate(){
-      console.log(this.value)
       axios.post('http://localhost:3000/fibonacci/calculate/', {index: this.value}).then((response) => {
+        console.log(response);
+        this.result = response.data
+      });
+    },
+
+    calculateRecursive(){
+      axios.post('http://localhost:3000/fibonacci/calculateRecursive/', {index: this.value}).then((response) => {
         console.log(response);
         this.result = response.data
       });
