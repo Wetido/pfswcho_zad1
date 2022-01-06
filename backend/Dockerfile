@@ -1,11 +1,11 @@
 FROM node:16-alpine
-RUN npm i -g @nestjs/cli
+
+COPY ./package.json .
 
 WORKDIR '/app'
 
-COPY package.json .
-
-RUN NODE_ENV=development npm install
+RUN npm i -g @nestjs/cli
+RUN npm install
 COPY . .
 
 EXPOSE 5000

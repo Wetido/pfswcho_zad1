@@ -1,14 +1,13 @@
 FROM node:16-alpine
 
-WORKDIR '/app'
+COPY ./package.json .
 
-COPY package.json .
+WORKDIR '/app'
 
 RUN npm install
 
 RUN npm install -g @vue/cli-service-global
 RUN npm install -g @vue/cli
-RUN npm install http-server -g
 
 COPY . .
 
