@@ -8,12 +8,15 @@ Ostatnim użytymkontenerem jest redis pozwalający na cache'owanie danych.
 
 ```
 W aplikacji umożliwiono obliczanie elementów ciągu Fibonnaciego na dwa sposoby. 
-Iteracyjnie oraz rekurencyjnie. Dane są obliczane na backendzie.
-W przypadku liczenia iteracyjnego wartości są wyliczane do zadanego indexu i wszystkie wartości są w trakcie tego
-procesu cachowane. W przypadku liczenia rekurencyjnego przy każdym wywołaniu metody dla indexu o 1 i od 2
-mniejszego sprawdzane jest czy liczba nie znajduje się w redisie. Pozwala to na szybsze obliczenie kolejnych
-elementów ciągu i zapobiega wyczerpaniu pamięci stosu spowodowanego poprzez ilość zagnieżdzonych wywołań funkcji.
-Każde obliczenie jest zapisywane w historii z datą i infomacją o miejscu skąd została pobrana (ojaśnienia niżej).
+Iteracyjnie oraz rekurencyjnie. Dane są obliczane na backendzie. W przypadku 
+liczenia iteracyjnego wartości są wyliczane do zadanego indexu i wszystkie wartości 
+są w trakcie tego procesu cachowane. W przypadku liczenia rekurencyjnego 
+przy każdym wywołaniu metody dla indexu o 1 i od 2 mniejszego sprawdzane 
+jest czy liczba nie znajduje się w redisie. Pozwala to na szybsze obliczenie kolejnych
+elementów ciągu i zapobiega wyczerpaniu pamięci stosu spowodowanego 
+poprzez ilość zagnieżdzonych wywołań funkcji.
+Każde obliczenie jest zapisywane w historii z 
+datą i infomacją o miejscu skąd została pobrana (ojaśnienia niżej).
 ```
 
 ```
