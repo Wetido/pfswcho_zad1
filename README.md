@@ -27,7 +27,7 @@ następnej kolejności czy nie jest zapisana w bazie a później dopiero jest ob
 ## Schemat komunikacji
 ![communication](https://user-images.githubusercontent.com/33351633/148430707-e5057008-dcb7-4039-a894-f3f9ba6a216b.png)
 
-##Objaśnienie typów źródła w historii
+## Objaśnienie typów źródła w historii
 
 ```
 dataBase - podany index został znaleziony w bazie danych i został pobrany bez konieczności liczenia
