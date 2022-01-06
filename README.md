@@ -1,5 +1,3 @@
-# test
-
 ## Opis aplikacji
 ```
 Aplikacja została stworzona w oparciu o 5 kontenerów. Na frontendzie został użyty Vue.js na backendzie nest.ts.
@@ -28,6 +26,24 @@ następnej kolejności czy nie jest zapisana w bazie a później dopiero jest ob
 
 ## Schemat komunikacji
 ![communication](https://user-images.githubusercontent.com/33351633/148430707-e5057008-dcb7-4039-a894-f3f9ba6a216b.png)
+
+##Objaśnienie typów źródła w historii
+
+```
+dataBase - podany index został znaleziony w bazie danych i został pobrany bez konieczności liczenia
+```
+
+```
+redis - podany index został znaleziony w cache redisa i został pobrany bez konieczności liczenia
+```
+
+```
+countFibonacciNormal - podany index został policzony iteracyjnie
+```
+
+```
+countFibonacciRecursive - podany index został obliczony rekurencyjnie
+```
 
 
 
