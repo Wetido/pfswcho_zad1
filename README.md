@@ -1,5 +1,9 @@
 ## Opis aplikacji
 ```
+Aplikacja uruchamia się na http://localhost:8080/
+```
+
+```
 Aplikacja została stworzona w oparciu o 5 kontenerów. 
 Na frontendzie został użyty Vue.js na backendzie nest.ts.
 Użyta baza danych to postgres, do łączenia sie z bazą stworzony też kontener w oparciu o pgadmin. 
@@ -48,3 +52,7 @@ countFibonacciNormal - podany index został policzony iteracyjnie
 ```
 countFibonacciRecursive - podany index został obliczony rekurencyjnie
 ```
+
+## Zdjęcie potwierdzające działania usług
+
+![image](https://user-images.githubusercontent.com/33351633/148441322-17ed9079-db5d-4802-9d04-a3297afc35d8.png)
