@@ -1,9 +1,9 @@
 <template>
-  <div class="hello">
-    <label>Podaj wartosc ciągu do obliczenia</label>
+  <div class="hello" style="margin-top: 20px">
+    <label>Podaj wartosc ciągu do obliczenia </label>
     <input v-model="value"><br>
-    <button @click="calculate">Oblicz</button><br>
-    <button @click="calculateRecursive">Oblicz Rekurencyjnie</button><br>
+    <button style="margin-top: 20px" @click="calculate">Oblicz</button><br>
+    <button style="margin-top: 20px" @click="calculateRecursive">Oblicz Rekurencyjnie</button><br>
 
     <div v-show="result !== null">
       Wynik = {{result}}

@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    Home
+    Wykonanie - Jakub Kaliszuk IMST 2.2/4
   </div>
 </template>
 

@@ -1,7 +1,7 @@
 <template>
   <div class="hello">
-    Historia ostatnich 10 obliczeń
-    <table style="margin: 0 auto">
+    <div style="margin-top: 20px">Historia ostatnich 10 obliczeń</div>
+    <table style="margin: 0 auto; margin-top: 20px">
       <thead>
       <tr>
         <th>Index</th>
