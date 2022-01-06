@@ -1,13 +1,14 @@
 ## Opis aplikacji
 ```
-Aplikacja została stworzona w oparciu o 5 kontenerów. Na frontendzie został użyty Vue.js na backendzie nest.ts.
-Użyta baza danych to postgres, do łączenia sie z bazą stworzony też kontener w oparciu o pgadmin. Ostatnim użytym
-kontenerem jest redis pozwalający na cache'owanie danych.
+Aplikacja została stworzona w oparciu o 5 kontenerów. 
+Na frontendzie został użyty Vue.js na backendzie nest.ts.
+Użyta baza danych to postgres, do łączenia sie z bazą stworzony też kontener w oparciu o pgadmin. 
+Ostatnim użytymkontenerem jest redis pozwalający na cache'owanie danych.
 ```
 
 ```
-W aplikacji umożliwiono obliczanie elementów ciągu
-Fibonnaciego na dwa sposoby. Iteracyjnie oraz rekurencyjnie. Dane są obliczane na backendzie.
+W aplikacji umożliwiono obliczanie elementów ciągu Fibonnaciego na dwa sposoby. 
+Iteracyjnie oraz rekurencyjnie. Dane są obliczane na backendzie.
 W przypadku liczenia iteracyjnego wartości są wyliczane do zadanego indexu i wszystkie wartości są w trakcie tego
 procesu cachowane. W przypadku liczenia rekurencyjnego przy każdym wywołaniu metody dla indexu o 1 i od 2
 mniejszego sprawdzane jest czy liczba nie znajduje się w redisie. Pozwala to na szybsze obliczenie kolejnych
@@ -44,6 +45,3 @@ countFibonacciNormal - podany index został policzony iteracyjnie
 ```
 countFibonacciRecursive - podany index został obliczony rekurencyjnie
 ```
-
-
-
